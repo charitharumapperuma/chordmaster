@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxWidth="360.0" minHeight="540.0" minWidth="360.0" prefHeight="540.0" prefWidth="360.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortyfourx.sinhalachords.basic.gui.AppController">
+<AnchorPane minHeight="540.0" minWidth="360.0" prefHeight="540.0" prefWidth="360.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortyfourx.sinhalachords.basic.gui.AppController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #2980b9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox minWidth="360.0" prefWidth="360.0" style="-fx-background-color: #333333;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="30.0" prefWidth="320.0">
                <children>
@@ -39,8 +39,9 @@
                </VBox.margin>
             </TextField>
          
-             <ListView fx:id="listViewResults" prefHeight="444.0" prefWidth="360.0" />
+             <ListView fx:id="listViewResults" prefWidth="360.0" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
+      <HBox fx:id="sidePane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

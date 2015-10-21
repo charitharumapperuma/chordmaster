@@ -26,7 +26,7 @@ public class Main {
 		
 		try {
 			Class.forName("org.sqlite.JDBC");
-			conSqlite = DriverManager.getConnection("jdbc:sqlite:sinhalachords-basic-v1.db");
+			conSqlite = DriverManager.getConnection("jdbc:sqlite:sinhalachords-basic-v2.db");
 
 			Class.forName("com.mysql.jdbc.Driver");
 			conMysql = DriverManager.getConnection("jdbc:mysql://localhost:3306/chordmaster", "root", "");
@@ -44,7 +44,7 @@ public class Main {
 			stmtSqlite.executeUpdate();
 			
 			sql = "SELECT * FROM artist;";
-			stmtMysql = conSqlite.prepareStatement(sql);
+			stmtMysql = conMysql.prepareStatement(sql);
 			rs = stmtMysql.executeQuery();
 			int artistId;
 			String artistName;
@@ -98,7 +98,7 @@ public class Main {
 				songArtist = rs.getInt("artist");
 				
 				try {
-					songLyrics = new File("E:/eclipse-common/chordmaster-program/song/lyrics/" + songId + ".png");
+					songLyrics = new File("E:/lyrics/" + songId + ".png");
 					fis = new FileInputStream(songLyrics);
 					baos = new ByteArrayOutputStream();
 					
@@ -108,7 +108,7 @@ public class Main {
 							System.out.println("read " + readNum + " bytes,");
 						}
 					} catch (IOException ex) {
-						System.err.println(ex.getMessage());
+						ex.printStackTrace();
 					}
 					songLyricsByteArray = baos.toByteArray();
 					
@@ -128,7 +128,7 @@ public class Main {
 			}
 			
 		} catch (Exception e) {
-			System.err.println(e.getClass().getName() + ": " + e.getMessage());
+			e.printStackTrace();
 			System.exit(0);
 		} finally {
 			try {

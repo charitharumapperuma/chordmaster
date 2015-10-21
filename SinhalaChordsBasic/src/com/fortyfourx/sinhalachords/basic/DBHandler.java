@@ -22,7 +22,7 @@ public class DBHandler {
 		if (conn == null) {
 			try {
 				Class.forName("org.sqlite.JDBC");
-				conn = DriverManager.getConnection("jdbc:sqlite:sinhalachords-basic-v1.db");
+				conn = DriverManager.getConnection("jdbc:sqlite:sinhalachords-basic-v2.db");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
